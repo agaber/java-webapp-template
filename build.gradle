@@ -2,7 +2,7 @@ apply plugin: 'eclipse'
 apply plugin: 'jetty'
 apply plugin: 'war'
 
-// This defaults to the web directory name, which is just fine normally.
+// This defaults to the project directory name, which is just fine normally.
 war.baseName = 'myapp'
 
 repositories {
