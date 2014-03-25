@@ -1,12 +1,35 @@
 Getting started with Java Web Development.
 
-1. Install Eclipse.
+1. Install Git. Grab this code with this command:
 
-2. Install Maven.
+  $ git clone https://github.com/agaber/java-webapp-template.git
 
-3. Install Git.
+2. Install Gradle.
 
-4. Set up Maven with Eclipse. The very first time you'll need to run this
+3. Install Eclipse. Set up your project with Eclipse using this command:
+
+  $ gradle eclipse
+
+  Then in Eclipse, File -> Import -> Existing Project Into Workspace
+  -> Select root directory -> Finish
+
+4. Compile and test with this command:
+
+  $ gradle build
+
+5. Run test server with this command:
+
+  $ gradle jettyRun
+
+
+6. Deploy to production:
+
+  $ cp ./build/lib/myapp.war /realserver/deploydir
+
+
+Alternatively use Maven:
+
+Set up Maven with Eclipse. The very first time you'll need to run this
 command so you can have maven set up your Eclipse projects for you:
 
   $ mvn eclipse:eclipse -Declipse.workspace=$HOME/workspace eclipse:add-maven-repo
@@ -14,8 +37,8 @@ command so you can have maven set up your Eclipse projects for you:
 Where $HOME/workspace is whatever your Eclipse workspace directory is. You
 should only need to do that once.
 
-5. Maven supports setting up projects from templates, but you can just copy
-this directory, cd into that directory and run mvn eclipse:eclipse and you
-should be able to set up your eclipse project. mvn package will create the war
-file for you and mvn jetty:run will run the server for local development.
- 
+
+Alternatively use IntelliJ:
+
+Add "apply plugin: 'intellij'" to build.gradle. More than likely you will be
+able to create a project from a gradle file in IntelliJ directly though.

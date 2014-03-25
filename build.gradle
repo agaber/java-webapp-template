@@ -1,0 +1,20 @@
+apply plugin: 'eclipse'
+apply plugin: 'jetty'
+apply plugin: 'war'
+
+// This defaults to the web directory name, which is just fine normally.
+war.baseName = 'myapp'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'ch.qos.logback:logback-classic:1.1.1'
+  compile 'org.slf4j:slf4j-api:1.7.6'
+  providedCompile 'javax.servlet:servlet-api:2.5'
+  providedCompile 'javax.servlet:jstl:1.2'
+  providedCompile 'javax.servlet.jsp:jsp-api:2.2'
+  testCompile 'junit:junit:4.+'
+  testCompile 'org.mockito:mockito-all:1.9.5'
+}
